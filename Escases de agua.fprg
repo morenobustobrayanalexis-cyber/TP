@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Escases de agua"/>
+        <attribute name="authors" value="moren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-18 12:50:35 p.&#160;m."/>
+        <attribute name="created" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTg7MTI6Mzc6NDAgcC7CoG0uOzMxNjA="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTg7MTI6NTA6MzUgcC7CoG0uOzE7MzI2Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ValorMetroCubico, CantidadMentroCubico, Largo, Ancho, Alto, Recipiente" type="Real" array="False" size=""/>
+            <assign variable="ValorMetroCubico" expression="100000"/>
+            <output expression="&quot;El valor del metro cubico de agua esta en 100.000&quot;" newline="True"/>
+            <output expression="&quot;Digite las siguientes medidas en metros&quot;" newline="True"/>
+            <output expression="&quot;Digite el largo de su recipiente&quot;" newline="True"/>
+            <input variable="Largo"/>
+            <output expression="&quot;Digite el ancho de su recipiente&quot;" newline="True"/>
+            <input variable="Ancho"/>
+            <output expression="&quot;Digite la altura de su recipiente&quot;" newline="True"/>
+            <input variable="Alto"/>
+            <assign variable="Recipiente" expression="(Largo * Alto * Ancho) * ValorMetroCubico"/>
+            <output expression="&quot;Usted debe de pagar &quot; &amp; Recipiente &amp; &quot; pesos &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

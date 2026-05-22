@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Hipotenusa de un triangulo mediante el teorema de pitagoras"/>
+        <attribute name="authors" value="moren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-19 09:20:38 p.&#160;m."/>
+        <attribute name="created" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTg7MTI6MjU6MjMgcC7CoG0uOzMxNTg="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTk7MDk6MjA6MzggcC7CoG0uOzI7MzI3NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="CatetoOpuesto, CatetoAdyacente, Hipotenusa" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite el cateo opuesto&quot;" newline="True"/>
+            <input variable="CatetoOpuesto"/>
+            <output expression="&quot;Digite cateto adyacente&quot;" newline="True"/>
+            <input variable="CatetoAdyacente"/>
+            <assign variable="Hipotenusa" expression="sqrt(CatetoOpuesto^2 + CatetoAdyacente^2)"/>
+            <output expression="&quot;la hipotenusa de su triangulo es &quot; &amp; Hipotenusa" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Tiempo en recorrer una distancia"/>
+        <attribute name="authors" value="moren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-18 01:04:07 p.&#160;m."/>
+        <attribute name="created" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTg7MTI6NTA6MzcgcC7CoG0uOzMxNjE="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDQtMTg7MDE6MDQ6MDcgcC7CoG0uOzE7MzI2Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Distancia, VelocidadConstante, TiempoDeLlegada" type="Real" array="False" size=""/>
+            <declare name="Lugaralquequiereir" type="String" array="False" size=""/>
+            <output expression="&quot;&#191;Hacia donde quiere ir?&quot;" newline="True"/>
+            <input variable="Lugaralquequiereir"/>
+            <output expression="&quot;&#191;Cuantos kilometros hay, desde su ubicacion hasta &quot; &amp; Lugaralquequiereir" newline="True"/>
+            <input variable="Distancia"/>
+            <output expression="&quot;&#191;A que velocidad va a ir? &quot;" newline="True"/>
+            <input variable="VelocidadConstante"/>
+            <assign variable="TiempoDeLlegada" expression="Distancia / VelocidadConstante"/>
+            <output expression="&quot;Para ir hasta &quot; &amp; Lugaralquequiereir &amp; &quot; estara llegando a su destino en &quot; &amp; TiempoDeLlegada &amp; &quot; horas &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
