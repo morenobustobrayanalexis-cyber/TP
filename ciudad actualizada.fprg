@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="crear ciudad de chozas"/>
+        <attribute name="authors" value="DOCENTE"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-15 01:33:38 p.&#160;m."/>
+        <attribute name="created" value="RE9DRU5URTtERVNLVE9QLU9WT1VDRVY7MjAyNi0wNS0wODswNzowMjozOSBwLsKgbS47MzI1Mg=="/>
+        <attribute name="edited" value="RE9DRU5URTtERVNLVE9QLU9WT1VDRVY7MjAyNi0wNS0wODswODo1NjozMCBwLsKgbS47MTszMzYx"/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDUtMTU7MDE6MzM6MzggcC7CoG0uOzI7MzI2OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, Cantidad" type="Integer" array="False" size=""/>
+            <input variable="Cantidad"/>
+            <for variable="i" start="1" end="Cantidad" direction="inc" step="1">
+                <call expression="HacerCasa()"/>
+            </for>
+        </body>
+    </function>
+    <function name="AnchoCasa" type="None" variable="">
+        <parameters>
+            <parameter name="&#209;" type="Real" array="False"/>
+            <parameter name="S" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <turn expression="90" rotate="right"/>
+            <forward expression="&#209;*1.5" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="S" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="&#209;*1.5" pen="down"/>
+            <turn expression="45" rotate="right"/>
+            <forward expression="&#209;* (SQRT(2))/2" pen="down"/>
+            <turn expression="135" rotate="right"/>
+            <forward expression="&#209;*1.5" pen="down"/>
+            <turn expression="45" rotate="right"/>
+            <forward expression="&#209;* (SQRT(2))/2" pen="down"/>
+        </body>
+    </function>
+    <function name="CrearTriangulo" type="None" variable="">
+        <parameters>
+            <parameter name="Ancho" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <turn expression="45" rotate="right"/>
+            <forward expression="Ancho* (SQRT(2))/2" pen="down"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="Ancho* (SQRT(2))/2" pen="down"/>
+            <turn expression="135" rotate="right"/>
+            <forward expression="Ancho" pen="down"/>
+        </body>
+    </function>
+    <function name="HacerCasa" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="Largo, Ancho, Tama&#241;o" type="Real" array="False" size=""/>
+            <assign variable="Tama&#241;o" expression="random(100)"/>
+            <assign variable="Ancho" expression="Tama&#241;o*5"/>
+            <assign variable="Largo" expression="Tama&#241;o*5"/>
+            <call expression="HacerRectangulo(Ancho, Largo)"/>
+            <forward expression="Largo" pen="down"/>
+            <call expression="CrearTriangulo(Ancho)"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="Largo" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="(Ancho/8)*3" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <call expression="HacerRectangulo(Ancho/4, Largo/4)"/>
+            <forward expression="(Ancho/8)*5" pen="up"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="(Ancho/8)*2" pen="up"/>
+            <turn expression="90" rotate="right"/>
+            <call expression="HacerRectangulo(Ancho/4, Largo/4)"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="(Ancho/8)*4" pen="up"/>
+            <turn expression="90" rotate="left"/>
+            <call expression="HacerRectangulo(Ancho/4, Largo/4)"/>
+            <turn expression="180" rotate="right"/>
+            <forward expression="(Ancho/8)*5" pen="up"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="(Ancho/8)*3" pen="up"/>
+            <turn expression="90" rotate="left"/>
+            <call expression="AnchoCasa (Ancho, Largo)"/>
+            <turn expression="45" rotate="right"/>
+            <forward expression="(Ancho/8)*1" pen="down"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="((Ancho*1.5)/8)*2" pen="up"/>
+            <forward expression="((Ancho*1.5)/8)*4" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="((Ancho*1.5)/8)*1.5" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="((Ancho*1.5)/8)*4" pen="down"/>
+            <turn expression="90" rotate="left"/>
+            <forward expression="((Ancho*1.5)/8)*1.5" pen="down"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="((Ancho*1.5)/8)*2" pen="up"/>
+            <turn expression="90" rotate="right"/>
+            <forward expression="(Ancho/8)*7" pen="down"/>
+            <turn expression="180" rotate="right"/>
+        </body>
+    </function>
+    <function name="HacerRectangulo" type="None" variable="">
+        <parameters>
+            <parameter name="W" type="Real" array="False"/>
+            <parameter name="H" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="2" direction="inc" step="1">
+                <forward expression="H" pen="down"/>
+                <turn expression="90" rotate="right"/>
+                <forward expression="W" pen="down"/>
+                <turn expression="90" rotate="right"/>
+            </for>
+        </body>
+    </function>
+    <function name="VentanaAncho" type="None" variable="">
+        <parameters>
+            <parameter name="L" type="Real" array="False"/>
+            <parameter name="A" type="Integer" array="False"/>
+        </parameters>
+        <body/>
+    </function>
+</flowgorithm>
