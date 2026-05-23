@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Adivinar numero"/>
+        <attribute name="authors" value="Estudiante"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-05-23 01:22:11 p.&#160;m."/>
+        <attribute name="created" value="RXN0dWRpYW50ZTtUQk5YQ1YxMUM3NjE0N0M7MjAyNi0wNS0yMjswNjo1Njo1OCBwLuKAr20uOzExNzAw"/>
+        <attribute name="edited" value="RXN0dWRpYW50ZTtUQk5YQ1YxMUM3NjE0N0M7MjAyNi0wNS0yMjswNzoyMjoyMiBwLuKAr20uOzE7MTE3OTM="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDUtMjM7MDE6MjI6MTEgcC7CoG0uOzE7MzI1NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, Nrandom, Ningresado" type="Real" array="False" size=""/>
+            <declare name="Bandera" type="Boolean" array="False" size=""/>
+            <assign variable="Nrandom" expression="random(100)"/>
+            <assign variable="i" expression="1"/>
+            <assign variable="Bandera" expression="true"/>
+            <while expression="Bandera = true">
+                <output expression="&quot;digite un numero&quot;" newline="True"/>
+                <input variable="Ningresado"/>
+                <if expression="Ningresado = Nrandom">
+                    <then>
+                        <output expression="&quot;ah adivinado el numero en &quot; &amp; i &amp; &quot; intentos&quot;" newline="True"/>
+                        <assign variable="bandera" expression="false"/>
+                    </then>
+                    <else>
+                        <if expression="Ningresado &gt; Nrandom">
+                            <then>
+                                <output expression="&quot;el numero es menor&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;el numero es mayor &quot;" newline="True"/>
+                            </else>
+                        </if>
+                        <assign variable="i" expression="i + 1"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
