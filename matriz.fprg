@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="matriz"/>
+        <attribute name="authors" value="moren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-06-03 04:04:59 p.&#160;m."/>
+        <attribute name="created" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDUtMjk7MDY6MjU6MjEgcC7CoG0uOzMxNjI="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDYtMDM7MDM6NTg6NTIgcC7CoG0uOzE7bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDYtMDM7MDM6MzI6NTYgcC7CoG0uOzY0ODc="/>
+        <attribute name="edited" value="bW9yZW47REVTS1RPUC0xMlNFUzIwOzIwMjYtMDYtMDM7MDQ6MDQ6NTkgcC7CoG0uOzI7MzI3MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="CantidadArreglos" type="Real" array="False" size=""/>
+            <output expression="&quot;digite la cantidad de arreglos que quiere hacer&quot;" newline="True"/>
+            <input variable="CantidadArreglos"/>
+            <declare name="Numeros" type="Integer" array="True" size="CantidadArreglos"/>
+            <call expression="LlenarVector (Numeros, CantidadArreglos)"/>
+            <call expression="ImprimirVector (Numeros, CantidadArreglos)"/>
+            <call expression="MetodoOrdenamientoBurbuja(Numeros, CantidadArreglos)"/>
+            <output expression="&quot;Le vamos a mostrar los numeros que digito en orden de menos a mayo&quot;" newline="True"/>
+            <call expression="ImprimirVector (Numeros, CantidadArreglos)"/>
+        </body>
+    </function>
+    <function name="ImprimirVector" type="None" variable="">
+        <parameters>
+            <parameter name="Vector" type="Integer" array="True"/>
+            <parameter name="Cant" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Real" array="False" size=""/>
+            <for variable="i" start="0" end="Cant-1" direction="inc" step="1">
+                <output expression="Vector[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="LlenarVector" type="None" variable="">
+        <parameters>
+            <parameter name="Vector" type="Integer" array="True"/>
+            <parameter name="Cant" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i" type="Real" array="False" size=""/>
+            <for variable="i" start="0" end="Cant -1" direction="inc" step="1">
+                <output expression="&quot;digite el numero para la memoria &quot; &amp; i+1" newline="True"/>
+                <input variable="Vector[i]"/>
+            </for>
+        </body>
+    </function>
+    <function name="MetodoOrdenamientoBurbuja" type="None" variable="">
+        <parameters>
+            <parameter name="Numeros" type="Integer" array="True"/>
+            <parameter name="Cantidad" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="i, j, Cambio" type="Real" array="False" size=""/>
+            <for variable="i" start="0" end="Cantidad-2" direction="inc" step="1">
+                <for variable="j" start="i+1" end="Cantidad-1" direction="inc" step="1">
+                    <if expression="Numeros[i] &gt; Numeros[j]">
+                        <then>
+                            <assign variable="Cambio" expression="Numeros[i]"/>
+                            <assign variable="Numeros[i]" expression="Numeros[j]"/>
+                            <assign variable="Numeros[j]" expression="Cambio"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
